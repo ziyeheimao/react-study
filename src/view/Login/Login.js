@@ -2,6 +2,8 @@ import React from 'react'
 // import {Link} from 'react-router-dom'
 import { Button, Input } from 'element-react';
 // import ReactDOM from 'react-dom'
+import './login.scss'
+import loginImg from './login.png'
 
 class Login extends React.Component{
   constructor(props) {
@@ -46,17 +48,18 @@ class Login extends React.Component{
 
   render () {
     return (
-      <div>
-        <setion>
-          <div ></div>
+      <div className='login-ctn'>
+        <section>
+          <div className='img'>
+            <img src={loginImg} alt='loginImg'></img>
+          </div>
 
           <div className='login'>
             <Input placeholder="请输入内容" />
             <Input placeholder="请输入内容" />
             <Button>立即登录</Button>
           </div>
-        </setion>
-        
+        </section>
       </div>
     )
   }
