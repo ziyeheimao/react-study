@@ -1,0 +1,44 @@
+$navWidth: 200px;
+$boxPadding: 15px;
+
+$mainColor: #eee;
+$radius: 5px;
+$mainBorder: 1px solid $mainColor;
+@mixin border() {
+  border: $mainBorder;
+  // border-radius: $radius;
+}
+
+// main
+
+.home-ctn{
+  text-align: center;
+  &>header{
+    padding: $boxPadding;
+    @include border();
+  }
+  &>section{
+    display: flex;
+    &>nav{
+      @include border();
+      width: $navWidth;
+      & .title{
+        padding: $boxPadding;
+      }
+      &>a~a>.title{
+        border-top: $mainBorder;
+      }
+    }
+    &>main{
+      @include border();
+      flex: 1;
+    }
+  }
+  &>footer{
+    @include border();
+    padding: $boxPadding;
+  }
+}
+.home-ctn, .home-ctn * {
+  // outline: 1px solid red;
+}

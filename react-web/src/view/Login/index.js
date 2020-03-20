@@ -2,7 +2,7 @@ import React from 'react'
 // import {Link} from 'react-router-dom'
 import { Button, Input, Form, Message } from 'element-react';
 // import ReactDOM from 'react-dom'
-import './login.scss'
+import './index.scss'
 import loginImg from './login.png'
 
 class Login extends React.Component {
