@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import api from '../../module/api'
-import { Button, Input, Form, Message } from 'element-react';
+import { Button, Message } from 'element-react';
+// Input, Form,
 import './index.scss'
 class FetchAPI extends React.Component{
   getData () { // 请求数据函数

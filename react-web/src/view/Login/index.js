@@ -37,20 +37,37 @@ class Login extends React.Component {
 
   handleSubmit (e) { // 提交
     e.preventDefault();
-    this.refs.form.validate((valid) => {
-      if (valid) {
-        // alert(
-        // `账号：${this.state.form.name}
-        // 密码：${this.state.form.pwd}`);
-        Message({
-          message: `账号：${this.state.form.name} 密码：${this.state.form.pwd}`,
-          type: 'success'
-        });
-      } else {
-        console.log('error submit!!');
-        return false;
+    let text = {name: this.state.name, pwd: this.state.pwd} //获取数据
+    let send = JSON.stringify(text);   //重要！将对象转换成json字符串
+    fetch(
+      `http://127.0.0.1:666/`,
+      {
+        // method: 'GET',
+        method: 'POST',
+        headers: {'Content-Type': 'application/json; charset=utf-8'},
+        body: send
+      },
+      ).then(res => res.json()).then(
+      data => {
+        // this.setState({ mytext: data })
+        console.log(data)
       }
-    });
+    )
+
+    // this.refs.form.validate((valid) => {
+    //   if (valid) {
+    //     // alert(
+    //     // `账号：${this.state.form.name}
+    //     // 密码：${this.state.form.pwd}`);
+    //     Message({
+    //       message: `账号：${this.state.form.name} 密码：${this.state.form.pwd}`,
+    //       type: 'success'
+    //     });
+    //   } else {
+    //     console.log('error submit!!');
+    //     return false;
+    //   }
+    // });
   }
   handleReset (e) { // 重置
     e.preventDefault();
@@ -68,9 +85,9 @@ class Login extends React.Component {
   }
 
   componentWillMount () {
-    // height = this.getHeight()
     // console.log(height)
-    this.getData()
+
+    // this.getData()
   }
   componentDidMount () { }
 
