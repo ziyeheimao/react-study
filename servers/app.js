@@ -24,7 +24,7 @@ server.use(express.static('public'));
 let ipArr = []
 for (let i of toolClass.corsHost) {
   for (let j of toolClass.corsport) {
-    ipArr.push(`${i}:${j}`)
+    ipArr.push(`http://${i}:${j}`)
   }
 }
 // console.log('跨域白名单', ipArr)
@@ -34,17 +34,14 @@ server.use(cors({
 }));
 
 
-// body-parser配置
-// server.use(bodyParser.urlencoded({ // 解析原生表单 post请求主体数据
-//   extnded: false // 使用querystring解析数据
-// }));
-
 
 // 以json形式处理请求,修改post请求允许数据大小
-server.use(bodyParser.json({ // 使用body parser用于解析post的body
+server.use(bodyParser.json({
   limit: '50mb' // 限制post请求大小为50MB, 用于base64数据传输
-}));
+})); // 解析axios(json格式) post请求主体数据
 
+// server.use(bodyParser.json());//使用body parser用于解析post的body
+// server.use(bodyParser.urlencoded({ extended: true }));//使用body parser用于解析post的body
 
 // 中间件
 // server.use(main.middleware.token)           // 自定义中间件: token

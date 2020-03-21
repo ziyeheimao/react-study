@@ -15,15 +15,16 @@ router.post('/login', (req, res) => {
   var obj = req.body;
 
   //验证数据是否为空
-  var field = obj.field;
-  var password = obj.password;
+  var name = obj.name;
+  var pwd = obj.pwd;
+  console.log(req.body)
 
-  if (!field) {
-    res.send({ code: -1, msg: '账号不可为空' });
+  if (!name) {
+    res.send({ code: -1, msg: '账号不可为空', req });
     return;
   }
-  if (!password) {
-    res.send({ code: -1, msg: '密码不可为空' });
+  if (!pwd) {
+    res.send({ code: -1, msg: '密码不可为空', req });
     return;
   }
   res.send({code: 0, msg: '欢迎回家', res: {userData: '当前用户数据', token: 'asd54sdf542f4g5dfg6f65sda4f63a41sd36'}})
