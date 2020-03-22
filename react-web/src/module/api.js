@@ -25,10 +25,6 @@ const user = {
 
 // 系统管理
 
-const login = ''
-const login = ''
-const login = ''
-const login = ''
 // ------------------------------- 接口字符串 -------------------------------
 
 
