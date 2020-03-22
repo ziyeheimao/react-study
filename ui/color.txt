@@ -1,0 +1,12 @@
+马卡龙色系
+浅色系：hsb(xxx, 15, 100)	粉340	蓝215	黄55
+			ffd9e6	d9e9ff    	fffcd9
+
+中色系：hsb(xxx, 50, 100)	玫红330	天蓝205	橘黄25	紫265
+			ff7fbf	7fcaff    	ffb57f	b57fff
+
+深色系：hsb(xxx, 80, 100)	橙25
+			ff8833
+
+其他色系
+辅助色：hash()		边框eee	留白fff	文字666	标题333

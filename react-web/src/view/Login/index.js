@@ -25,16 +25,6 @@ class Login extends React.Component {
       }
     };
   }
-  getData () { // 请求数据函数
-    fetch(`http://127.0.0.1:666/`, {
-      method: 'GET'
-    }).then(res => res.text()).then(
-      data => {
-        // this.setState({ mytext: data })
-        console.log(data)
-      }
-    )
-  }
 
   handleSubmit (e) { // 提交
     e.preventDefault();
