@@ -33,8 +33,8 @@ class Login extends React.Component {
       if (valid) {
         let req = {name: this.state.form.name, pwd: this.state.form.pwd} //获取数据
 
-        api.login(req).then(data => {
-          console.log('res', data)
+        api.login(req).then(res => res.json()).then(res => {
+          console.log(res)
         })
       }
     });
