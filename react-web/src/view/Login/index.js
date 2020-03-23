@@ -1,7 +1,7 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import { Button, Input, Form } from 'element-react';
-// Message
+import api from '../../module/api'
+import { Button, Input, Form } from 'element-react'; // Message
 // import ReactDOM from 'react-dom'
 import './index.scss'
 import loginImg from './login.png'
@@ -29,35 +29,13 @@ class Login extends React.Component {
   handleSubmit (e) { // 提交
     e.preventDefault();
 
-
     this.refs.form.validate((valid) => {
       if (valid) {
-        let text = {name: this.state.form.name, pwd: this.state.form.pwd} //获取数据
-        console.log(text)
-    
-        let send = JSON.stringify(text);   //重要！将对象转换成json字符串
-    
-        fetch(
-          `http://127.0.0.1:666/user/login`,
-          {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json; charset=utf-8'},
-            body: send
-          },
-          ).then(res => res.json()).then(
-          data => {
-            // this.setState({ mytext: data })
-            console.log(data)
-          }
-        )
+        let req = {name: this.state.form.name, pwd: this.state.form.pwd} //获取数据
 
-        // Message({
-        //   message: `账号：${this.state.form.name} 密码：${this.state.form.pwd}`,
-        //   type: 'success'
-        // });
-      } else {
-        console.log('error submit!!');
-        return false;
+        api.login(req).then(data => {
+          console.log('res', data)
+        })
       }
     });
   }
@@ -66,22 +44,17 @@ class Login extends React.Component {
     this.refs.form.resetFields();
   }
   onChange (key, value) {
-    // console.log(key, value)
     this.setState({
       form: Object.assign({}, this.state.form, { [key]: value })
     });
   }
 
-  getHeight () {
-    return window.innerHeight
-  }
-
   componentWillMount () {
-    // console.log(height)
-
-    // this.getData()
+    // console.log(api)
   }
-  componentDidMount () { }
+  componentDidMount () {
+    // console.log(api)
+  }
 
   render () {
     return (
