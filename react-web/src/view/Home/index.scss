@@ -10,14 +10,15 @@
   bottom: 0;
   left: 0;
   right: 0;
+
   &>.ctn-box{
-    width: 80%;
+    width: 70%;
     // height: 80%;
 
-    border: 1px solid red;
+    // border: 1px solid red;
     position: relative;
     top: 10%;
-    left: 10%;
+    left: 15%;
     // position: absolute;
 
     &>header{ // 页头
@@ -29,7 +30,7 @@
           color: rgb(255,255,255);
         }
       }
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
 
     &>section{ // 内容区域
@@ -38,7 +39,9 @@
           width: 100%;
           // border-collapse: collapse;
           td{
-            margin: 15px;
+            &>img{
+              width: 50%;
+            }
           }
         }
         &>table, &>table *{
