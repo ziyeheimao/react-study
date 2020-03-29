@@ -12,12 +12,17 @@ import mode6 from './img/mode6.jpg'
 import mode7 from './img/mode7.jpg'
 import mode8 from './img/mode8.jpg'
 
-
 class Home extends React.Component{
   constructor(props) {
     super(props);
 
     this.state = {
+      grid: {
+        width: ''
+      },
+      bigGrid: {
+        width: ''
+      },
       // form: {
       //   name: '',
       //   pwd: ''
@@ -31,6 +36,26 @@ class Home extends React.Component{
       //   ]
       // }
     };
+  }
+  componentWillMount () {
+    // console.log(api)
+  }
+  componentDidMount () {
+    let tableStyle = getComputedStyle(this.dom,null)
+    let tableWidth = tableStyle.width
+    tableWidth = tableWidth.slice(0, -2)
+
+    let gridWidth = (tableWidth - (15 * 5)) / 4
+    let bigGridWidth = gridWidth * 2 +15
+
+    // this.state.bigGrid.width = bigGridWidth
+    // this.state.grid.width = gridWidth
+
+    // this.setState({
+    //   bigGrid: {width: bigGridWidth},
+    //   grid: {width: gridWidth}
+    // })
+    console.log(this.state.grid.width)
   }
 
   render(){
@@ -56,21 +81,49 @@ class Home extends React.Component{
 
           <section>
             <nav>
-              <table cellspacing='15px'>
-                <tr>
-                  <td rowspan='2'><img src={mode1} alt='mode1'></img></td>
-                  <td rowspan='2'><img src={mode2} alt='mode2'></img></td>
-                  <td colspan='2'><img src={mode3} alt='mode3'></img></td>
-                </tr>
-                <tr>
-                  <td><img src={mode4} alt='mode4'></img></td>
-                  <td><img src={mode5} alt='mode5'></img></td>
-                </tr>
-                <tr>
-                  <td><img src={mode6} alt='mode6'></img></td>
-                  <td colspan='2'><img src={mode7} alt='mode7'></img></td>
-                  <td><img src={mode8} alt='mode8'></img></td>
-                </tr>
+              <table cellSpacing='15px' ref={dom=>this.dom=dom}>
+                <tbody>
+                  <tr>
+                    <td rowSpan='2'>{/* style={{width: this.state.grid.width}} */}
+                      {this.state.grid.width}
+                      受恶意呢日哦内蒙古
+                      {/* <img src='http://via.placeholder.com/350X700/fff/000?text=hello world' alt='mode1'></img> */}
+                    </td>
+                    <td rowSpan='2' >
+                      {/* style={this.state.grid} */}
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode2} alt='mode2'></img> */}
+                    </td>
+                    <td colSpan='2'>
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode3} alt='mode3'></img> */}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode4} alt='mode4'></img> */}
+                    </td>
+                    <td>
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode5} alt='mode5'></img> */}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode6} alt='mode6'></img> */}
+                    </td>
+                    <td colSpan='2'>
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode7} alt='mode7'></img> */}
+                    </td>
+                    <td>
+                      受恶意呢日哦内蒙古
+                      {/* <img src={mode8} alt='mode8'></img> */}
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </nav>
           </section>

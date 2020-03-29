@@ -1,9 +1,8 @@
 .home-ctn{
-  border: 1px solid red;
-  background-image: url(./img/bgi.jpg); // $$ 撞色
+  background-image: url(./img/bgi2.jpg);
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-repeat: repeat-y;
+  background-size: 100%;
 
   position: absolute; // 铺满一屏幕
   top: 0;
@@ -36,6 +35,9 @@
     &>section{ // 内容区域
       &>nav{
         &>table{
+          background-color: #ffffff20;
+          box-shadow: 0px 0px 15px #00000080;
+          border-radius: 10px;
           width: 100%;
           // border-collapse: collapse;
           td{
@@ -52,6 +54,7 @@
   }
 }
 
+// 按钮
 .my-link{
   color: rgb(255,255,255);
   padding: 3px 15px;
